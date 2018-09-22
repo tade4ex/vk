@@ -1,13 +1,10 @@
 <template>
-  <b-jumbotron>
+  <b-jumbotron v-if="!authVkSuccess">
     <template slot="header">
       vk.tade4ex.com
     </template>
     <hr class="my-4">
-    <div v-if="authVkSuccess">
-      <vk-profile :vkAccessToken="vkAccessToken"/>
-    </div>
-    <div v-else>
+    <div>
       <p>
         To continue, pleas login.
       </p>
@@ -19,7 +16,6 @@
 <script>
   import bJumbotron from 'bootstrap-vue/es/components/jumbotron/jumbotron';
   import bBtn from 'bootstrap-vue/es/components/button/button';
-  import VkProfile from '@/components/VkProfile';
 
   export default {
     name: 'VkAuth',
@@ -41,8 +37,7 @@
     },
     components: {
       bJumbotron,
-      bBtn,
-      VkProfile
+      bBtn
     }
   }
 </script>

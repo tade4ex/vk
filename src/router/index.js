@@ -1,25 +1,21 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import HomePage from '@/pages/HomePage'
-import VkAuthRes from '@/components/VkAuthRes'
+import Vue from 'vue';
+import Router from 'vue-router';
+import HomePage from '@/pages/HomePage';
+import GroupInfoPage from '@/pages/GroupInfoPage';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'HomePage',
-      props: {
-        testName1: 'alo',
-      },
+      name: '/',
       component: HomePage
-    },
-    {
-      path: '/vk-auth-res',
-      name: 'VkAuthRes',
-      component: VkAuthRes
+    }, {
+      path: '/group-info/:id',
+      name: 'group-info',
+      component: GroupInfoPage
     }
   ]
-})
+});
